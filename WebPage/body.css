@@ -1,0 +1,145 @@
+/* body.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 140px;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.input-section {
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.keyword-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.remove-keyword {
+    background: transparent;
+    border: none;
+    color: #ff6f61;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.remove-keyword:hover {
+    color: #f00;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.file-input {
+    display: flex;
+    gap: 10px;
+}
+
+#pdf-upload-label {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#pdf-upload-label:hover {
+    background-color: #f00;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#url-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.submit-button {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #f00;
+}
+
+/* Added styling for the added keywords */
+.added-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.keyword {
+    background: #4CAF50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.remove-keyword-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Added styling for the floating header */
+body {
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+    min-height: 100vh;
+    background: #FDF4F5;
+}
+
+.main-content {
+    display: flex;
+}
+
+
+.custom-file-label::after {
+    content: "Choose file";
+}

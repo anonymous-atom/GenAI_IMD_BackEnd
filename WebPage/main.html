@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern Input Form</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include your custom CSS for styling -->
+  <link rel="stylesheet" href="body.css">
+  <style>
+    /* Add your additional custom CSS here */
+    .added-keywords .keyword {
+      background: #4CAF50;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+    }
+
+    /* Custom CSS to adjust the file input */
+    .custom-file-input::before {
+      content: "Browse";
+    }
+    .custom-file-label {
+      overflow: hidden;
+    }
+
+    /* Custom CSS to style the "Or Enter URL" input */
+    .url-input {
+      margin-top: 10px; /* Add some spacing */
+    }
+
+    /* Custom CSS to adjust the column widths */
+    .custom-main-content {
+      display: flex; /* Ensure the main content is displayed as a flex container */
+    }
+
+    .custom-main-content .column-left {
+        /* Make column take 3/4 of the width */
+        flex: 3;
+
+    }
+
+.column-right {
+      padding: 20px; /* Add padding to the right column */
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="custom-main-content">
+      <div class="column-left">
+        <iframe src="test.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+      <div class="column-right">
+        <h2>Input Form</h2>
+        <div class="input-form">
+          <div class="input-section">
+            <label for="keywords">Enter Keywords:</label>
+            <div class="keyword-input input-group mb-3">
+              <input type="text" class="form-control" id="keywords" placeholder="Keyword">
+              <div class="input-group-append">
+                <button class="add-keyword btn btn-primary" aria-label="Add Keyword">Add</button>
+              </div>
+            </div>
+            <div class="added-keywords" id="added-keywords"></div>
+          </div>
+          <div class="input-section">
+            <label for="description">Enter 2-4 Lines:</label>
+            <textarea class="form-control" id="description" placeholder="Description"></textarea>
+          </div>
+          <div class="input-section">
+            <label for="pdf-upload">Upload PDF:</label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file-upload" accept=".pdf">
+                <label class="custom-file-label" for="file-upload" id="pdf-upload-label">Choose</label>
+              </div>
+            </div>
+            <label for="url-input" class="url-input">Or Enter URL:</label>
+            <input type="text" class="form-control" id="url-input" placeholder="https://example.com">
+          </div>
+          <button class="submit-button btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="keywords_inpt.js"></script>
+  <script>
+    // JavaScript for updating the PDF upload label
+    const fileUpload = document.getElementById("file-upload");
+    const pdfUploadLabel = document.getElementById("pdf-upload-label");
+
+    fileUpload.addEventListener("change", () => {
+      pdfUploadLabel.textContent = fileUpload.files[0] ? fileUpload.files[0].name : "Choose file";
+    });
+  </script>
+</body>
+</html>
